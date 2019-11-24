@@ -10,16 +10,23 @@ class Header extends Component {
 				return;
 			case false:
 				return (
-					<li>
-						<a href="/auth/google">Login with Google</a>
-					</li>
+					<React.Fragment>
+						<li>
+							<a href="/auth/google">Login with Google</a>
+						</li>
+					</React.Fragment>
 				);
 			default:
-				return (
-					<li>
-						<a href="/api/logout">Logout</a>
-					</li>
-				);
+				return [
+					<React.Fragment key="0">
+						<li key="1">
+							<Payments />
+						</li>
+						<li key="2">
+							<a href="/api/logout">Logout</a>
+						</li>
+					</React.Fragment>
+				];
 		}
 	}
 
